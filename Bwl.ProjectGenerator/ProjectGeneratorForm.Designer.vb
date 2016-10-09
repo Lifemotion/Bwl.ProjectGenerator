@@ -22,38 +22,39 @@ Partial Class ProjectGeneratorForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbLicense = New System.Windows.Forms.GroupBox()
+        Me.licenseApache = New System.Windows.Forms.RadioButton()
         Me.licenseNone = New System.Windows.Forms.RadioButton()
         Me.gbBasic = New System.Windows.Forms.GroupBox()
-        Me.basicProjectName = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.basicProjectAuthor = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.basicProjectPath = New System.Windows.Forms.TextBox()
-        Me.licenseApache = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.basicProjectAuthor = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.basicProjectName = New System.Windows.Forms.TextBox()
         Me.gbVS = New System.Windows.Forms.GroupBox()
-        Me.vsNone = New System.Windows.Forms.RadioButton()
-        Me.vsGui = New System.Windows.Forms.RadioButton()
-        Me.vsConsole = New System.Windows.Forms.RadioButton()
+        Me.vsStandardForm = New System.Windows.Forms.GroupBox()
+        Me.vsAutoUi = New System.Windows.Forms.RadioButton()
+        Me.vsFormAppBase = New System.Windows.Forms.RadioButton()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.vsBwlUniversalOrm = New System.Windows.Forms.CheckBox()
+        Me.vsBwlVideo = New System.Windows.Forms.CheckBox()
+        Me.vsBwlImaging = New System.Windows.Forms.CheckBox()
+        Me.vsBwlHardwareSimplSerial = New System.Windows.Forms.CheckBox()
+        Me.vsBwlHardwareSerial = New System.Windows.Forms.CheckBox()
+        Me.vsBwlNetworkTransport = New System.Windows.Forms.CheckBox()
+        Me.vsBwlFramework = New System.Windows.Forms.CheckBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.vsFw45 = New System.Windows.Forms.RadioButton()
+        Me.vsFw40 = New System.Windows.Forms.RadioButton()
+        Me.vsLibraryConsole = New System.Windows.Forms.RadioButton()
         Me.vsLibraryTestGui = New System.Windows.Forms.RadioButton()
         Me.vsLibraryGui = New System.Windows.Forms.RadioButton()
-        Me.vsLibraryConsole = New System.Windows.Forms.RadioButton()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.vsFw40 = New System.Windows.Forms.RadioButton()
-        Me.vsFw45 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.vsFormAppBase = New System.Windows.Forms.RadioButton()
-        Me.vsAutoUi = New System.Windows.Forms.RadioButton()
-        Me.vsBwlFramework = New System.Windows.Forms.CheckBox()
-        Me.vsBwlNetworkTransport = New System.Windows.Forms.CheckBox()
-        Me.vsBwlHardwareSerial = New System.Windows.Forms.CheckBox()
-        Me.vsBwlHardwareSimplSerial = New System.Windows.Forms.CheckBox()
-        Me.vsBwlImaging = New System.Windows.Forms.CheckBox()
-        Me.vsBwlVideo = New System.Windows.Forms.CheckBox()
-        Me.vsBwlUniversalOrm = New System.Windows.Forms.CheckBox()
+        Me.vsConsole = New System.Windows.Forms.RadioButton()
+        Me.vsGui = New System.Windows.Forms.RadioButton()
+        Me.vsNone = New System.Windows.Forms.RadioButton()
         Me.gbAS = New System.Windows.Forms.GroupBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.CheckBox10 = New System.Windows.Forms.CheckBox()
@@ -63,14 +64,14 @@ Partial Class ProjectGeneratorForm
         Me.CheckBox14 = New System.Windows.Forms.CheckBox()
         Me.asProjectC = New System.Windows.Forms.RadioButton()
         Me.asNone = New System.Windows.Forms.RadioButton()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.bGenerate = New System.Windows.Forms.Button()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.gbLicense.SuspendLayout()
         Me.gbBasic.SuspendLayout()
         Me.gbVS.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.vsStandardForm.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.gbAS.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
         Me.SuspendLayout()
@@ -90,6 +91,18 @@ Partial Class ProjectGeneratorForm
         Me.gbLicense.TabIndex = 2
         Me.gbLicense.TabStop = False
         Me.gbLicense.Text = "License"
+        '
+        'licenseApache
+        '
+        Me.licenseApache.AutoSize = True
+        Me.licenseApache.Checked = True
+        Me.licenseApache.Location = New System.Drawing.Point(6, 42)
+        Me.licenseApache.Name = "licenseApache"
+        Me.licenseApache.Size = New System.Drawing.Size(80, 17)
+        Me.licenseApache.TabIndex = 1
+        Me.licenseApache.TabStop = True
+        Me.licenseApache.Text = "Apache 2.0"
+        Me.licenseApache.UseVisualStyleBackColor = True
         '
         'licenseNone
         '
@@ -116,21 +129,21 @@ Partial Class ProjectGeneratorForm
         Me.gbBasic.TabStop = False
         Me.gbBasic.Text = "Basic"
         '
-        'basicProjectName
+        'Label3
         '
-        Me.basicProjectName.Location = New System.Drawing.Point(94, 19)
-        Me.basicProjectName.Name = "basicProjectName"
-        Me.basicProjectName.Size = New System.Drawing.Size(215, 20)
-        Me.basicProjectName.TabIndex = 0
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 49)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(65, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Project Path"
         '
-        'Label1
+        'basicProjectPath
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 22)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Project Name"
+        Me.basicProjectPath.Location = New System.Drawing.Point(94, 46)
+        Me.basicProjectPath.Name = "basicProjectPath"
+        Me.basicProjectPath.Size = New System.Drawing.Size(830, 20)
+        Me.basicProjectPath.TabIndex = 4
         '
         'Label2
         '
@@ -148,37 +161,25 @@ Partial Class ProjectGeneratorForm
         Me.basicProjectAuthor.Size = New System.Drawing.Size(215, 20)
         Me.basicProjectAuthor.TabIndex = 2
         '
-        'Label3
+        'Label1
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 49)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Project Path"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 22)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Project Name"
         '
-        'basicProjectPath
+        'basicProjectName
         '
-        Me.basicProjectPath.Location = New System.Drawing.Point(94, 46)
-        Me.basicProjectPath.Name = "basicProjectPath"
-        Me.basicProjectPath.Size = New System.Drawing.Size(830, 20)
-        Me.basicProjectPath.TabIndex = 4
-        '
-        'licenseApache
-        '
-        Me.licenseApache.AutoSize = True
-        Me.licenseApache.Checked = True
-        Me.licenseApache.Location = New System.Drawing.Point(6, 42)
-        Me.licenseApache.Name = "licenseApache"
-        Me.licenseApache.Size = New System.Drawing.Size(80, 17)
-        Me.licenseApache.TabIndex = 1
-        Me.licenseApache.TabStop = True
-        Me.licenseApache.Text = "Apache 2.0"
-        Me.licenseApache.UseVisualStyleBackColor = True
+        Me.basicProjectName.Location = New System.Drawing.Point(94, 19)
+        Me.basicProjectName.Name = "basicProjectName"
+        Me.basicProjectName.Size = New System.Drawing.Size(215, 20)
+        Me.basicProjectName.TabIndex = 0
         '
         'gbVS
         '
-        Me.gbVS.Controls.Add(Me.GroupBox6)
+        Me.gbVS.Controls.Add(Me.vsStandardForm)
         Me.gbVS.Controls.Add(Me.GroupBox5)
         Me.gbVS.Controls.Add(Me.GroupBox4)
         Me.gbVS.Controls.Add(Me.vsLibraryConsole)
@@ -194,37 +195,171 @@ Partial Class ProjectGeneratorForm
         Me.gbVS.TabStop = False
         Me.gbVS.Text = "Visual Studio Projects"
         '
-        'vsNone
+        'vsStandardForm
         '
-        Me.vsNone.AutoSize = True
-        Me.vsNone.Location = New System.Drawing.Point(6, 19)
-        Me.vsNone.Name = "vsNone"
-        Me.vsNone.Size = New System.Drawing.Size(55, 17)
-        Me.vsNone.TabIndex = 1
-        Me.vsNone.Text = "(none)"
-        Me.vsNone.UseVisualStyleBackColor = True
+        Me.vsStandardForm.Controls.Add(Me.RadioButton1)
+        Me.vsStandardForm.Controls.Add(Me.vsAutoUi)
+        Me.vsStandardForm.Controls.Add(Me.vsFormAppBase)
+        Me.vsStandardForm.Location = New System.Drawing.Point(9, 220)
+        Me.vsStandardForm.Name = "vsStandardForm"
+        Me.vsStandardForm.Size = New System.Drawing.Size(199, 75)
+        Me.vsStandardForm.TabIndex = 9
+        Me.vsStandardForm.TabStop = False
+        Me.vsStandardForm.Text = "Gui Type"
         '
-        'vsGui
+        'vsAutoUi
         '
-        Me.vsGui.AutoSize = True
-        Me.vsGui.Checked = True
-        Me.vsGui.Location = New System.Drawing.Point(6, 42)
-        Me.vsGui.Name = "vsGui"
-        Me.vsGui.Size = New System.Drawing.Size(63, 17)
-        Me.vsGui.TabIndex = 2
-        Me.vsGui.TabStop = True
-        Me.vsGui.Text = "Gui App"
-        Me.vsGui.UseVisualStyleBackColor = True
+        Me.vsAutoUi.AutoSize = True
+        Me.vsAutoUi.Location = New System.Drawing.Point(103, 42)
+        Me.vsAutoUi.Name = "vsAutoUi"
+        Me.vsAutoUi.Size = New System.Drawing.Size(58, 17)
+        Me.vsAutoUi.TabIndex = 3
+        Me.vsAutoUi.Text = "AutoUI"
+        Me.vsAutoUi.UseVisualStyleBackColor = True
         '
-        'vsConsole
+        'vsFormAppBase
         '
-        Me.vsConsole.AutoSize = True
-        Me.vsConsole.Location = New System.Drawing.Point(6, 65)
-        Me.vsConsole.Name = "vsConsole"
-        Me.vsConsole.Size = New System.Drawing.Size(85, 17)
-        Me.vsConsole.TabIndex = 3
-        Me.vsConsole.Text = "Console App"
-        Me.vsConsole.UseVisualStyleBackColor = True
+        Me.vsFormAppBase.AutoSize = True
+        Me.vsFormAppBase.Checked = True
+        Me.vsFormAppBase.Location = New System.Drawing.Point(6, 42)
+        Me.vsFormAppBase.Name = "vsFormAppBase"
+        Me.vsFormAppBase.Size = New System.Drawing.Size(91, 17)
+        Me.vsFormAppBase.TabIndex = 2
+        Me.vsFormAppBase.TabStop = True
+        Me.vsFormAppBase.Text = "FormAppBase"
+        Me.vsFormAppBase.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.vsBwlUniversalOrm)
+        Me.GroupBox5.Controls.Add(Me.vsBwlVideo)
+        Me.GroupBox5.Controls.Add(Me.vsBwlImaging)
+        Me.GroupBox5.Controls.Add(Me.vsBwlHardwareSimplSerial)
+        Me.GroupBox5.Controls.Add(Me.vsBwlHardwareSerial)
+        Me.GroupBox5.Controls.Add(Me.vsBwlNetworkTransport)
+        Me.GroupBox5.Controls.Add(Me.vsBwlFramework)
+        Me.GroupBox5.Location = New System.Drawing.Point(218, 19)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(198, 195)
+        Me.GroupBox5.TabIndex = 8
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "References"
+        '
+        'vsBwlUniversalOrm
+        '
+        Me.vsBwlUniversalOrm.AutoSize = True
+        Me.vsBwlUniversalOrm.Location = New System.Drawing.Point(10, 157)
+        Me.vsBwlUniversalOrm.Name = "vsBwlUniversalOrm"
+        Me.vsBwlUniversalOrm.Size = New System.Drawing.Size(115, 17)
+        Me.vsBwlUniversalOrm.TabIndex = 7
+        Me.vsBwlUniversalOrm.Text = "Bwl.UniversalORM"
+        Me.vsBwlUniversalOrm.UseVisualStyleBackColor = True
+        '
+        'vsBwlVideo
+        '
+        Me.vsBwlVideo.AutoSize = True
+        Me.vsBwlVideo.Location = New System.Drawing.Point(10, 134)
+        Me.vsBwlVideo.Name = "vsBwlVideo"
+        Me.vsBwlVideo.Size = New System.Drawing.Size(73, 17)
+        Me.vsBwlVideo.TabIndex = 6
+        Me.vsBwlVideo.Text = "Bwl.Video"
+        Me.vsBwlVideo.UseVisualStyleBackColor = True
+        '
+        'vsBwlImaging
+        '
+        Me.vsBwlImaging.AutoSize = True
+        Me.vsBwlImaging.Location = New System.Drawing.Point(10, 111)
+        Me.vsBwlImaging.Name = "vsBwlImaging"
+        Me.vsBwlImaging.Size = New System.Drawing.Size(83, 17)
+        Me.vsBwlImaging.TabIndex = 5
+        Me.vsBwlImaging.Text = "Bwl.Imaging"
+        Me.vsBwlImaging.UseVisualStyleBackColor = True
+        '
+        'vsBwlHardwareSimplSerial
+        '
+        Me.vsBwlHardwareSimplSerial.AutoSize = True
+        Me.vsBwlHardwareSimplSerial.Location = New System.Drawing.Point(10, 88)
+        Me.vsBwlHardwareSimplSerial.Name = "vsBwlHardwareSimplSerial"
+        Me.vsBwlHardwareSimplSerial.Size = New System.Drawing.Size(146, 17)
+        Me.vsBwlHardwareSimplSerial.TabIndex = 4
+        Me.vsBwlHardwareSimplSerial.Text = "Bwl.Hardware.SimplSerial"
+        Me.vsBwlHardwareSimplSerial.UseVisualStyleBackColor = True
+        '
+        'vsBwlHardwareSerial
+        '
+        Me.vsBwlHardwareSerial.AutoSize = True
+        Me.vsBwlHardwareSerial.Location = New System.Drawing.Point(10, 65)
+        Me.vsBwlHardwareSerial.Name = "vsBwlHardwareSerial"
+        Me.vsBwlHardwareSerial.Size = New System.Drawing.Size(121, 17)
+        Me.vsBwlHardwareSerial.TabIndex = 3
+        Me.vsBwlHardwareSerial.Text = "Bwl.Hardware.Serial"
+        Me.vsBwlHardwareSerial.UseVisualStyleBackColor = True
+        '
+        'vsBwlNetworkTransport
+        '
+        Me.vsBwlNetworkTransport.AutoSize = True
+        Me.vsBwlNetworkTransport.Location = New System.Drawing.Point(10, 42)
+        Me.vsBwlNetworkTransport.Name = "vsBwlNetworkTransport"
+        Me.vsBwlNetworkTransport.Size = New System.Drawing.Size(134, 17)
+        Me.vsBwlNetworkTransport.TabIndex = 2
+        Me.vsBwlNetworkTransport.Text = "Bwl.Network.Transport"
+        Me.vsBwlNetworkTransport.UseVisualStyleBackColor = True
+        '
+        'vsBwlFramework
+        '
+        Me.vsBwlFramework.AutoSize = True
+        Me.vsBwlFramework.Checked = True
+        Me.vsBwlFramework.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.vsBwlFramework.Enabled = False
+        Me.vsBwlFramework.Location = New System.Drawing.Point(10, 19)
+        Me.vsBwlFramework.Name = "vsBwlFramework"
+        Me.vsBwlFramework.Size = New System.Drawing.Size(98, 17)
+        Me.vsBwlFramework.TabIndex = 0
+        Me.vsBwlFramework.Text = "Bwl.Framework"
+        Me.vsBwlFramework.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.vsFw45)
+        Me.GroupBox4.Controls.Add(Me.vsFw40)
+        Me.GroupBox4.Location = New System.Drawing.Point(9, 167)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(199, 47)
+        Me.GroupBox4.TabIndex = 7
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Framework"
+        '
+        'vsFw45
+        '
+        Me.vsFw45.AutoSize = True
+        Me.vsFw45.Checked = True
+        Me.vsFw45.Location = New System.Drawing.Point(52, 19)
+        Me.vsFw45.Name = "vsFw45"
+        Me.vsFw45.Size = New System.Drawing.Size(40, 17)
+        Me.vsFw45.TabIndex = 3
+        Me.vsFw45.TabStop = True
+        Me.vsFw45.Text = "4.5"
+        Me.vsFw45.UseVisualStyleBackColor = True
+        '
+        'vsFw40
+        '
+        Me.vsFw40.AutoSize = True
+        Me.vsFw40.Location = New System.Drawing.Point(6, 19)
+        Me.vsFw40.Name = "vsFw40"
+        Me.vsFw40.Size = New System.Drawing.Size(40, 17)
+        Me.vsFw40.TabIndex = 2
+        Me.vsFw40.Text = "4.0"
+        Me.vsFw40.UseVisualStyleBackColor = True
+        '
+        'vsLibraryConsole
+        '
+        Me.vsLibraryConsole.AutoSize = True
+        Me.vsLibraryConsole.Location = New System.Drawing.Point(6, 134)
+        Me.vsLibraryConsole.Name = "vsLibraryConsole"
+        Me.vsLibraryConsole.Size = New System.Drawing.Size(128, 17)
+        Me.vsLibraryConsole.TabIndex = 6
+        Me.vsLibraryConsole.Text = "Library + Console App"
+        Me.vsLibraryConsole.UseVisualStyleBackColor = True
         '
         'vsLibraryTestGui
         '
@@ -246,170 +381,37 @@ Partial Class ProjectGeneratorForm
         Me.vsLibraryGui.Text = "Library + Gui App"
         Me.vsLibraryGui.UseVisualStyleBackColor = True
         '
-        'vsLibraryConsole
+        'vsConsole
         '
-        Me.vsLibraryConsole.AutoSize = True
-        Me.vsLibraryConsole.Location = New System.Drawing.Point(6, 134)
-        Me.vsLibraryConsole.Name = "vsLibraryConsole"
-        Me.vsLibraryConsole.Size = New System.Drawing.Size(128, 17)
-        Me.vsLibraryConsole.TabIndex = 6
-        Me.vsLibraryConsole.Text = "Library + Console App"
-        Me.vsLibraryConsole.UseVisualStyleBackColor = True
+        Me.vsConsole.AutoSize = True
+        Me.vsConsole.Location = New System.Drawing.Point(6, 65)
+        Me.vsConsole.Name = "vsConsole"
+        Me.vsConsole.Size = New System.Drawing.Size(85, 17)
+        Me.vsConsole.TabIndex = 3
+        Me.vsConsole.Text = "Console App"
+        Me.vsConsole.UseVisualStyleBackColor = True
         '
-        'GroupBox4
+        'vsGui
         '
-        Me.GroupBox4.Controls.Add(Me.vsFw45)
-        Me.GroupBox4.Controls.Add(Me.vsFw40)
-        Me.GroupBox4.Location = New System.Drawing.Point(9, 167)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(199, 47)
-        Me.GroupBox4.TabIndex = 7
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Framework"
+        Me.vsGui.AutoSize = True
+        Me.vsGui.Checked = True
+        Me.vsGui.Location = New System.Drawing.Point(6, 42)
+        Me.vsGui.Name = "vsGui"
+        Me.vsGui.Size = New System.Drawing.Size(63, 17)
+        Me.vsGui.TabIndex = 2
+        Me.vsGui.TabStop = True
+        Me.vsGui.Text = "Gui App"
+        Me.vsGui.UseVisualStyleBackColor = True
         '
-        'vsFw40
+        'vsNone
         '
-        Me.vsFw40.AutoSize = True
-        Me.vsFw40.Location = New System.Drawing.Point(6, 19)
-        Me.vsFw40.Name = "vsFw40"
-        Me.vsFw40.Size = New System.Drawing.Size(40, 17)
-        Me.vsFw40.TabIndex = 2
-        Me.vsFw40.Text = "4.0"
-        Me.vsFw40.UseVisualStyleBackColor = True
-        '
-        'vsFw45
-        '
-        Me.vsFw45.AutoSize = True
-        Me.vsFw45.Checked = True
-        Me.vsFw45.Location = New System.Drawing.Point(52, 19)
-        Me.vsFw45.Name = "vsFw45"
-        Me.vsFw45.Size = New System.Drawing.Size(40, 17)
-        Me.vsFw45.TabIndex = 3
-        Me.vsFw45.TabStop = True
-        Me.vsFw45.Text = "4.5"
-        Me.vsFw45.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.vsBwlUniversalOrm)
-        Me.GroupBox5.Controls.Add(Me.vsBwlVideo)
-        Me.GroupBox5.Controls.Add(Me.vsBwlImaging)
-        Me.GroupBox5.Controls.Add(Me.vsBwlHardwareSimplSerial)
-        Me.GroupBox5.Controls.Add(Me.vsBwlHardwareSerial)
-        Me.GroupBox5.Controls.Add(Me.vsBwlNetworkTransport)
-        Me.GroupBox5.Controls.Add(Me.vsBwlFramework)
-        Me.GroupBox5.Location = New System.Drawing.Point(218, 19)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(198, 195)
-        Me.GroupBox5.TabIndex = 8
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "References"
-        '
-        'GroupBox6
-        '
-        Me.GroupBox6.Controls.Add(Me.vsAutoUi)
-        Me.GroupBox6.Controls.Add(Me.vsFormAppBase)
-        Me.GroupBox6.Location = New System.Drawing.Point(9, 220)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(199, 47)
-        Me.GroupBox6.TabIndex = 9
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Gui Type"
-        '
-        'vsFormAppBase
-        '
-        Me.vsFormAppBase.AutoSize = True
-        Me.vsFormAppBase.Checked = True
-        Me.vsFormAppBase.Location = New System.Drawing.Point(6, 19)
-        Me.vsFormAppBase.Name = "vsFormAppBase"
-        Me.vsFormAppBase.Size = New System.Drawing.Size(91, 17)
-        Me.vsFormAppBase.TabIndex = 2
-        Me.vsFormAppBase.TabStop = True
-        Me.vsFormAppBase.Text = "FormAppBase"
-        Me.vsFormAppBase.UseVisualStyleBackColor = True
-        '
-        'vsAutoUi
-        '
-        Me.vsAutoUi.AutoSize = True
-        Me.vsAutoUi.Location = New System.Drawing.Point(102, 19)
-        Me.vsAutoUi.Name = "vsAutoUi"
-        Me.vsAutoUi.Size = New System.Drawing.Size(58, 17)
-        Me.vsAutoUi.TabIndex = 3
-        Me.vsAutoUi.Text = "AutoUI"
-        Me.vsAutoUi.UseVisualStyleBackColor = True
-        '
-        'vsBwlFramework
-        '
-        Me.vsBwlFramework.AutoSize = True
-        Me.vsBwlFramework.Checked = True
-        Me.vsBwlFramework.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.vsBwlFramework.Enabled = False
-        Me.vsBwlFramework.Location = New System.Drawing.Point(10, 19)
-        Me.vsBwlFramework.Name = "vsBwlFramework"
-        Me.vsBwlFramework.Size = New System.Drawing.Size(98, 17)
-        Me.vsBwlFramework.TabIndex = 0
-        Me.vsBwlFramework.Text = "Bwl.Framework"
-        Me.vsBwlFramework.UseVisualStyleBackColor = True
-        '
-        'vsBwlNetworkTransport
-        '
-        Me.vsBwlNetworkTransport.AutoSize = True
-        Me.vsBwlNetworkTransport.Location = New System.Drawing.Point(10, 42)
-        Me.vsBwlNetworkTransport.Name = "vsBwlNetworkTransport"
-        Me.vsBwlNetworkTransport.Size = New System.Drawing.Size(134, 17)
-        Me.vsBwlNetworkTransport.TabIndex = 2
-        Me.vsBwlNetworkTransport.Text = "Bwl.Network.Transport"
-        Me.vsBwlNetworkTransport.UseVisualStyleBackColor = True
-        '
-        'vsBwlHardwareSerial
-        '
-        Me.vsBwlHardwareSerial.AutoSize = True
-        Me.vsBwlHardwareSerial.Location = New System.Drawing.Point(10, 65)
-        Me.vsBwlHardwareSerial.Name = "vsBwlHardwareSerial"
-        Me.vsBwlHardwareSerial.Size = New System.Drawing.Size(121, 17)
-        Me.vsBwlHardwareSerial.TabIndex = 3
-        Me.vsBwlHardwareSerial.Text = "Bwl.Hardware.Serial"
-        Me.vsBwlHardwareSerial.UseVisualStyleBackColor = True
-        '
-        'vsBwlHardwareSimplSerial
-        '
-        Me.vsBwlHardwareSimplSerial.AutoSize = True
-        Me.vsBwlHardwareSimplSerial.Location = New System.Drawing.Point(10, 88)
-        Me.vsBwlHardwareSimplSerial.Name = "vsBwlHardwareSimplSerial"
-        Me.vsBwlHardwareSimplSerial.Size = New System.Drawing.Size(146, 17)
-        Me.vsBwlHardwareSimplSerial.TabIndex = 4
-        Me.vsBwlHardwareSimplSerial.Text = "Bwl.Hardware.SimplSerial"
-        Me.vsBwlHardwareSimplSerial.UseVisualStyleBackColor = True
-        '
-        'vsBwlImaging
-        '
-        Me.vsBwlImaging.AutoSize = True
-        Me.vsBwlImaging.Location = New System.Drawing.Point(10, 111)
-        Me.vsBwlImaging.Name = "vsBwlImaging"
-        Me.vsBwlImaging.Size = New System.Drawing.Size(83, 17)
-        Me.vsBwlImaging.TabIndex = 5
-        Me.vsBwlImaging.Text = "Bwl.Imaging"
-        Me.vsBwlImaging.UseVisualStyleBackColor = True
-        '
-        'vsBwlVideo
-        '
-        Me.vsBwlVideo.AutoSize = True
-        Me.vsBwlVideo.Location = New System.Drawing.Point(10, 134)
-        Me.vsBwlVideo.Name = "vsBwlVideo"
-        Me.vsBwlVideo.Size = New System.Drawing.Size(73, 17)
-        Me.vsBwlVideo.TabIndex = 6
-        Me.vsBwlVideo.Text = "Bwl.Video"
-        Me.vsBwlVideo.UseVisualStyleBackColor = True
-        '
-        'vsBwlUniversalOrm
-        '
-        Me.vsBwlUniversalOrm.AutoSize = True
-        Me.vsBwlUniversalOrm.Location = New System.Drawing.Point(10, 157)
-        Me.vsBwlUniversalOrm.Name = "vsBwlUniversalOrm"
-        Me.vsBwlUniversalOrm.Size = New System.Drawing.Size(115, 17)
-        Me.vsBwlUniversalOrm.TabIndex = 7
-        Me.vsBwlUniversalOrm.Text = "Bwl.UniversalORM"
-        Me.vsBwlUniversalOrm.UseVisualStyleBackColor = True
+        Me.vsNone.AutoSize = True
+        Me.vsNone.Location = New System.Drawing.Point(6, 19)
+        Me.vsNone.Name = "vsNone"
+        Me.vsNone.Size = New System.Drawing.Size(55, 17)
+        Me.vsNone.TabIndex = 1
+        Me.vsNone.Text = "(none)"
+        Me.vsNone.UseVisualStyleBackColor = True
         '
         'gbAS
         '
@@ -439,6 +441,16 @@ Partial Class ProjectGeneratorForm
         Me.GroupBox9.TabIndex = 8
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "References"
+        '
+        'CheckBox15
+        '
+        Me.CheckBox15.AutoSize = True
+        Me.CheckBox15.Location = New System.Drawing.Point(10, 180)
+        Me.CheckBox15.Name = "CheckBox15"
+        Me.CheckBox15.Size = New System.Drawing.Size(53, 17)
+        Me.CheckBox15.TabIndex = 8
+        Me.CheckBox15.Text = "bwl_ir"
+        Me.CheckBox15.UseVisualStyleBackColor = True
         '
         'CheckBox8
         '
@@ -532,16 +544,6 @@ Partial Class ProjectGeneratorForm
         Me.asNone.Text = "(none)"
         Me.asNone.UseVisualStyleBackColor = True
         '
-        'CheckBox15
-        '
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(10, 180)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(53, 17)
-        Me.CheckBox15.TabIndex = 8
-        Me.CheckBox15.Text = "bwl_ir"
-        Me.CheckBox15.UseVisualStyleBackColor = True
-        '
         'bGenerate
         '
         Me.bGenerate.Location = New System.Drawing.Point(953, 33)
@@ -550,6 +552,16 @@ Partial Class ProjectGeneratorForm
         Me.bGenerate.TabIndex = 6
         Me.bGenerate.Text = "Generate"
         Me.bGenerate.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(94, 17)
+        Me.RadioButton1.TabIndex = 4
+        Me.RadioButton1.Text = "Standard Form"
+        Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'ProjectGeneratorForm
         '
@@ -575,12 +587,12 @@ Partial Class ProjectGeneratorForm
         Me.gbBasic.PerformLayout()
         Me.gbVS.ResumeLayout(False)
         Me.gbVS.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.vsStandardForm.ResumeLayout(False)
+        Me.vsStandardForm.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.gbAS.ResumeLayout(False)
         Me.gbAS.PerformLayout()
         Me.GroupBox9.ResumeLayout(False)
@@ -610,7 +622,7 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents vsFw45 As RadioButton
     Friend WithEvents vsFw40 As RadioButton
-    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents vsStandardForm As GroupBox
     Friend WithEvents vsAutoUi As RadioButton
     Friend WithEvents vsFormAppBase As RadioButton
     Friend WithEvents GroupBox5 As GroupBox
@@ -634,4 +646,5 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents asProjectC As RadioButton
     Friend WithEvents asNone As RadioButton
     Friend WithEvents bGenerate As Button
+    Friend WithEvents RadioButton1 As RadioButton
 End Class
