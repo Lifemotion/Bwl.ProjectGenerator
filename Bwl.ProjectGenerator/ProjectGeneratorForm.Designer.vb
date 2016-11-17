@@ -32,7 +32,8 @@ Partial Class ProjectGeneratorForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.basicProjectName = New System.Windows.Forms.TextBox()
         Me.gbVS = New System.Windows.Forms.GroupBox()
-        Me.vsStandardForm = New System.Windows.Forms.GroupBox()
+        Me.gbFormType = New System.Windows.Forms.GroupBox()
+        Me.vsStandardForm = New System.Windows.Forms.RadioButton()
         Me.vsAutoUi = New System.Windows.Forms.RadioButton()
         Me.vsFormAppBase = New System.Windows.Forms.RadioButton()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -65,11 +66,10 @@ Partial Class ProjectGeneratorForm
         Me.asProjectC = New System.Windows.Forms.RadioButton()
         Me.asNone = New System.Windows.Forms.RadioButton()
         Me.bGenerate = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.gbLicense.SuspendLayout()
         Me.gbBasic.SuspendLayout()
         Me.gbVS.SuspendLayout()
-        Me.vsStandardForm.SuspendLayout()
+        Me.gbFormType.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.gbAS.SuspendLayout()
@@ -144,6 +144,7 @@ Partial Class ProjectGeneratorForm
         Me.basicProjectPath.Name = "basicProjectPath"
         Me.basicProjectPath.Size = New System.Drawing.Size(830, 20)
         Me.basicProjectPath.TabIndex = 4
+        Me.basicProjectPath.Text = "C:\Users\heart\Desktop\test"
         '
         'Label2
         '
@@ -160,6 +161,7 @@ Partial Class ProjectGeneratorForm
         Me.basicProjectAuthor.Name = "basicProjectAuthor"
         Me.basicProjectAuthor.Size = New System.Drawing.Size(215, 20)
         Me.basicProjectAuthor.TabIndex = 2
+        Me.basicProjectAuthor.Text = "Cat Max"
         '
         'Label1
         '
@@ -176,10 +178,11 @@ Partial Class ProjectGeneratorForm
         Me.basicProjectName.Name = "basicProjectName"
         Me.basicProjectName.Size = New System.Drawing.Size(215, 20)
         Me.basicProjectName.TabIndex = 0
+        Me.basicProjectName.Text = "Bwl.ImgTest"
         '
         'gbVS
         '
-        Me.gbVS.Controls.Add(Me.vsStandardForm)
+        Me.gbVS.Controls.Add(Me.gbFormType)
         Me.gbVS.Controls.Add(Me.GroupBox5)
         Me.gbVS.Controls.Add(Me.GroupBox4)
         Me.gbVS.Controls.Add(Me.vsLibraryConsole)
@@ -195,17 +198,27 @@ Partial Class ProjectGeneratorForm
         Me.gbVS.TabStop = False
         Me.gbVS.Text = "Visual Studio Projects"
         '
+        'gbFormType
+        '
+        Me.gbFormType.Controls.Add(Me.vsStandardForm)
+        Me.gbFormType.Controls.Add(Me.vsAutoUi)
+        Me.gbFormType.Controls.Add(Me.vsFormAppBase)
+        Me.gbFormType.Location = New System.Drawing.Point(9, 220)
+        Me.gbFormType.Name = "gbFormType"
+        Me.gbFormType.Size = New System.Drawing.Size(199, 75)
+        Me.gbFormType.TabIndex = 9
+        Me.gbFormType.TabStop = False
+        Me.gbFormType.Text = "Gui Type"
+        '
         'vsStandardForm
         '
-        Me.vsStandardForm.Controls.Add(Me.RadioButton1)
-        Me.vsStandardForm.Controls.Add(Me.vsAutoUi)
-        Me.vsStandardForm.Controls.Add(Me.vsFormAppBase)
-        Me.vsStandardForm.Location = New System.Drawing.Point(9, 220)
+        Me.vsStandardForm.AutoSize = True
+        Me.vsStandardForm.Location = New System.Drawing.Point(6, 19)
         Me.vsStandardForm.Name = "vsStandardForm"
-        Me.vsStandardForm.Size = New System.Drawing.Size(199, 75)
-        Me.vsStandardForm.TabIndex = 9
-        Me.vsStandardForm.TabStop = False
-        Me.vsStandardForm.Text = "Gui Type"
+        Me.vsStandardForm.Size = New System.Drawing.Size(94, 17)
+        Me.vsStandardForm.TabIndex = 4
+        Me.vsStandardForm.Text = "Standard Form"
+        Me.vsStandardForm.UseVisualStyleBackColor = True
         '
         'vsAutoUi
         '
@@ -344,6 +357,7 @@ Partial Class ProjectGeneratorForm
         'vsFw40
         '
         Me.vsFw40.AutoSize = True
+        Me.vsFw40.Enabled = False
         Me.vsFw40.Location = New System.Drawing.Point(6, 19)
         Me.vsFw40.Name = "vsFw40"
         Me.vsFw40.Size = New System.Drawing.Size(40, 17)
@@ -418,6 +432,7 @@ Partial Class ProjectGeneratorForm
         Me.gbAS.Controls.Add(Me.GroupBox9)
         Me.gbAS.Controls.Add(Me.asProjectC)
         Me.gbAS.Controls.Add(Me.asNone)
+        Me.gbAS.Enabled = False
         Me.gbAS.Location = New System.Drawing.Point(448, 108)
         Me.gbAS.Name = "gbAS"
         Me.gbAS.Size = New System.Drawing.Size(216, 364)
@@ -553,16 +568,6 @@ Partial Class ProjectGeneratorForm
         Me.bGenerate.Text = "Generate"
         Me.bGenerate.UseVisualStyleBackColor = True
         '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(94, 17)
-        Me.RadioButton1.TabIndex = 4
-        Me.RadioButton1.Text = "Standard Form"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
         'ProjectGeneratorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -587,8 +592,8 @@ Partial Class ProjectGeneratorForm
         Me.gbBasic.PerformLayout()
         Me.gbVS.ResumeLayout(False)
         Me.gbVS.PerformLayout()
-        Me.vsStandardForm.ResumeLayout(False)
-        Me.vsStandardForm.PerformLayout()
+        Me.gbFormType.ResumeLayout(False)
+        Me.gbFormType.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -622,7 +627,7 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents vsFw45 As RadioButton
     Friend WithEvents vsFw40 As RadioButton
-    Friend WithEvents vsStandardForm As GroupBox
+    Friend WithEvents gbFormType As GroupBox
     Friend WithEvents vsAutoUi As RadioButton
     Friend WithEvents vsFormAppBase As RadioButton
     Friend WithEvents GroupBox5 As GroupBox
@@ -646,5 +651,5 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents asProjectC As RadioButton
     Friend WithEvents asNone As RadioButton
     Friend WithEvents bGenerate As Button
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents vsStandardForm As RadioButton
 End Class

@@ -1,0 +1,20 @@
+Bwl.Binaries
+Igor Koshelev (igor@lifemotion.ru) and others
+
+Precompiled binaries for projects:
+Bwl.Framework
+Bwl.Hardware.Serial
+Bwl.Network.Transport
+Bwl.Storage.UniversalORM
+Bwl.Imaging
+Bwl.Video
+
+All libraries started from Bwl.* are licenses under Apache 2.0.
+Sources can be found at:
+https://github.com/Lifemotion/Bwl.Framework
+https://github.com/Lifemotion/Bwl.Imaging
+https://github.com/Lifemotion/Bwl.Storage.UniversalORM
+https://github.com/Lifemotion/Bwl.Network.Transport
+https://github.com/Lifemotion/Bwl.Hardware.Serial
+https://github.com/Lifemotion/Bwl.SimplSerial.NET
+https://github.com/Lifemotion/Bwl.Video

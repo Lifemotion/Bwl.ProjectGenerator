@@ -70,6 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IOTools.vb" />
     <Compile Include="ProjectGeneratorForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="templates\.gitignore">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="templates\LICENSE-APACHE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="templates\README">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="templates\vs-vb\VsGeneratorTemplateCmd\App.vb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -122,6 +132,9 @@
     <None Include="templates\vs-vb\VsGeneratorTemplateGuiMain\My Project\Settings.Designer.vb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="templates\vs-vb\AutoUiApp.vb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="templates\vs-vb\VsGeneratorTemplateGui\App.Designer.vb">
       <DependentUpon>App.vb</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -133,6 +146,9 @@
     <Content Include="refs\Bwl.Framework.dll" />
     <Content Include="refs\Bwl.Framework.pdb" />
     <Content Include="refs\Bwl.Framework.xml" />
+    <None Include="templates\vs-vb\VsGeneratorTemplateTest.sln">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="templates\vs-vb\VsGeneratorTemplateGui\My Project\Application.Designer.vb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -170,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectGeneratorForm.resx">
       <DependentUpon>ProjectGeneratorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="templates\vs-vb\VsGeneratorTemplateGui\App.resx">
+      <DependentUpon>App.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="templates\vs-vb\VsGeneratorTemplateCmd\My Project\Resources.resx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
