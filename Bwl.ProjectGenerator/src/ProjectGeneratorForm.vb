@@ -3,13 +3,20 @@
 Public Class ProjectGeneratorForm
     Inherits FormAppBase
 
-    Private _refsRepo = "C:\Users\heart\Repositories\Bwl.Binaries"
+    Private _refsRepo As String = IO.Path.Combine(AppBase.DataFolder, "Bwl.Binaries")
+    Private _refsUrl As String = "https://github.com/Lifemotion/Bwl.Binaries"
+
+    Private _avrLibRepo As String = IO.Path.Combine(AppBase.DataFolder, "Bwl.AVRLib")
+    Private _avrLibUrl As String = "https://github.com/Lifemotion/Bwl.AVRLib.git"
+
+    Private _avrSsRepo As String = IO.Path.Combine(AppBase.DataFolder, "Bwl.AvrBootloader")
+    Private _avrSsUrl As String = "https://github.com/Lifemotion/Bwl.AvrBootloader.git"
 
     Private Sub bGenerate_Click(sender As Object, e As EventArgs) Handles bGenerate.Click
-        If vsNone.Checked = False Then GenerateVisualStudioSolution
+        If vsNone.Checked = False Then GenerateVisualVbStudioSolution()
     End Sub
 
-    Sub GenerateVisualStudioSolution()
+    Sub GenerateVisualVbStudioSolution()
         Dim prjs As New List(Of String)
 
         If vsGui.Checked Then
@@ -206,5 +213,13 @@ Public Class ProjectGeneratorForm
 
     Private Sub ProjectGeneratorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub bUpdateRepos_Click(sender As Object, e As EventArgs) Handles bUpdateRepos.Click
+        GitTool.Init()
+        GitTool.RepositoryPullOrClone(_refsRepo, _refsUrl)
+        GitTool.RepositoryPullOrClone(_avrLibRepo, _avrLibUrl)
+        GitTool.RepositoryPullOrClone(_avrSsRepo, _avrSsUrl)
+        _logger.AddMessage("Repositories updated")
     End Sub
 End Class

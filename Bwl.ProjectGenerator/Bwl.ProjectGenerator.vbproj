@@ -70,6 +70,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Git\GitRepositoryStatus.vb" />
+    <Compile Include="Git\GitTool.vb" />
     <Compile Include="IOTools.vb" />
     <Compile Include="ProjectGeneratorForm.vb">
       <SubType>Form</SubType>

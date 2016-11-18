@@ -66,6 +66,7 @@ Partial Class ProjectGeneratorForm
         Me.asProjectC = New System.Windows.Forms.RadioButton()
         Me.asNone = New System.Windows.Forms.RadioButton()
         Me.bGenerate = New System.Windows.Forms.Button()
+        Me.bUpdateRepos = New System.Windows.Forms.Button()
         Me.gbLicense.SuspendLayout()
         Me.gbBasic.SuspendLayout()
         Me.gbVS.SuspendLayout()
@@ -568,11 +569,21 @@ Partial Class ProjectGeneratorForm
         Me.bGenerate.Text = "Generate"
         Me.bGenerate.UseVisualStyleBackColor = True
         '
+        'bUpdateRepos
+        '
+        Me.bUpdateRepos.Location = New System.Drawing.Point(953, 403)
+        Me.bUpdateRepos.Name = "bUpdateRepos"
+        Me.bUpdateRepos.Size = New System.Drawing.Size(75, 69)
+        Me.bUpdateRepos.TabIndex = 7
+        Me.bUpdateRepos.Text = "Update Repositories"
+        Me.bUpdateRepos.UseVisualStyleBackColor = True
+        '
         'ProjectGeneratorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1039, 677)
+        Me.Controls.Add(Me.bUpdateRepos)
         Me.Controls.Add(Me.bGenerate)
         Me.Controls.Add(Me.gbAS)
         Me.Controls.Add(Me.gbVS)
@@ -586,6 +597,7 @@ Partial Class ProjectGeneratorForm
         Me.Controls.SetChildIndex(Me.gbVS, 0)
         Me.Controls.SetChildIndex(Me.gbAS, 0)
         Me.Controls.SetChildIndex(Me.bGenerate, 0)
+        Me.Controls.SetChildIndex(Me.bUpdateRepos, 0)
         Me.gbLicense.ResumeLayout(False)
         Me.gbLicense.PerformLayout()
         Me.gbBasic.ResumeLayout(False)
@@ -652,4 +664,5 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents asNone As RadioButton
     Friend WithEvents bGenerate As Button
     Friend WithEvents vsStandardForm As RadioButton
+    Friend WithEvents bUpdateRepos As Button
 End Class
