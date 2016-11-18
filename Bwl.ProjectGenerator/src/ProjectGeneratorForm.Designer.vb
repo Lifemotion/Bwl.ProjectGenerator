@@ -55,14 +55,14 @@ Partial Class ProjectGeneratorForm
         Me.vsNone = New System.Windows.Forms.RadioButton()
         Me.gbAS = New System.Windows.Forms.GroupBox()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
+        Me.asBwlIr = New System.Windows.Forms.CheckBox()
+        Me.asBwlSpi = New System.Windows.Forms.CheckBox()
+        Me.asBwlI2c = New System.Windows.Forms.CheckBox()
+        Me.asBwlAdc = New System.Windows.Forms.CheckBox()
+        Me.asBwlSimplSerial = New System.Windows.Forms.CheckBox()
+        Me.asBwlUart = New System.Windows.Forms.CheckBox()
+        Me.asBwlTools = New System.Windows.Forms.CheckBox()
+        Me.asBwlStrings = New System.Windows.Forms.CheckBox()
         Me.asProjectC = New System.Windows.Forms.RadioButton()
         Me.asNone = New System.Windows.Forms.RadioButton()
         Me.bGenerate = New System.Windows.Forms.Button()
@@ -433,7 +433,6 @@ Partial Class ProjectGeneratorForm
         Me.gbAS.Controls.Add(Me.GroupBox9)
         Me.gbAS.Controls.Add(Me.asProjectC)
         Me.gbAS.Controls.Add(Me.asNone)
-        Me.gbAS.Enabled = False
         Me.gbAS.Location = New System.Drawing.Point(448, 108)
         Me.gbAS.Name = "gbAS"
         Me.gbAS.Size = New System.Drawing.Size(216, 364)
@@ -443,14 +442,14 @@ Partial Class ProjectGeneratorForm
         '
         'GroupBox9
         '
-        Me.GroupBox9.Controls.Add(Me.CheckBox15)
-        Me.GroupBox9.Controls.Add(Me.CheckBox8)
-        Me.GroupBox9.Controls.Add(Me.CheckBox9)
-        Me.GroupBox9.Controls.Add(Me.CheckBox10)
-        Me.GroupBox9.Controls.Add(Me.CheckBox11)
-        Me.GroupBox9.Controls.Add(Me.CheckBox12)
-        Me.GroupBox9.Controls.Add(Me.CheckBox13)
-        Me.GroupBox9.Controls.Add(Me.CheckBox14)
+        Me.GroupBox9.Controls.Add(Me.asBwlIr)
+        Me.GroupBox9.Controls.Add(Me.asBwlSpi)
+        Me.GroupBox9.Controls.Add(Me.asBwlI2c)
+        Me.GroupBox9.Controls.Add(Me.asBwlAdc)
+        Me.GroupBox9.Controls.Add(Me.asBwlSimplSerial)
+        Me.GroupBox9.Controls.Add(Me.asBwlUart)
+        Me.GroupBox9.Controls.Add(Me.asBwlTools)
+        Me.GroupBox9.Controls.Add(Me.asBwlStrings)
         Me.GroupBox9.Location = New System.Drawing.Point(6, 65)
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.Size = New System.Drawing.Size(198, 248)
@@ -458,85 +457,92 @@ Partial Class ProjectGeneratorForm
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "References"
         '
-        'CheckBox15
+        'asBwlIr
         '
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(10, 180)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(53, 17)
-        Me.CheckBox15.TabIndex = 8
-        Me.CheckBox15.Text = "bwl_ir"
-        Me.CheckBox15.UseVisualStyleBackColor = True
+        Me.asBwlIr.AutoSize = True
+        Me.asBwlIr.Location = New System.Drawing.Point(10, 180)
+        Me.asBwlIr.Name = "asBwlIr"
+        Me.asBwlIr.Size = New System.Drawing.Size(53, 17)
+        Me.asBwlIr.TabIndex = 8
+        Me.asBwlIr.Text = "bwl_ir"
+        Me.asBwlIr.UseVisualStyleBackColor = True
         '
-        'CheckBox8
+        'asBwlSpi
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(10, 157)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(61, 17)
-        Me.CheckBox8.TabIndex = 7
-        Me.CheckBox8.Text = "bwl_spi"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.asBwlSpi.AutoSize = True
+        Me.asBwlSpi.Enabled = False
+        Me.asBwlSpi.Location = New System.Drawing.Point(10, 157)
+        Me.asBwlSpi.Name = "asBwlSpi"
+        Me.asBwlSpi.Size = New System.Drawing.Size(61, 17)
+        Me.asBwlSpi.TabIndex = 7
+        Me.asBwlSpi.Text = "bwl_spi"
+        Me.asBwlSpi.UseVisualStyleBackColor = True
         '
-        'CheckBox9
+        'asBwlI2c
         '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(10, 134)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(62, 17)
-        Me.CheckBox9.TabIndex = 6
-        Me.CheckBox9.Text = "bwl_i2c"
-        Me.CheckBox9.UseVisualStyleBackColor = True
+        Me.asBwlI2c.AutoSize = True
+        Me.asBwlI2c.Location = New System.Drawing.Point(10, 134)
+        Me.asBwlI2c.Name = "asBwlI2c"
+        Me.asBwlI2c.Size = New System.Drawing.Size(62, 17)
+        Me.asBwlI2c.TabIndex = 6
+        Me.asBwlI2c.Text = "bwl_i2c"
+        Me.asBwlI2c.UseVisualStyleBackColor = True
         '
-        'CheckBox10
+        'asBwlAdc
         '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(10, 111)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(66, 17)
-        Me.CheckBox10.TabIndex = 5
-        Me.CheckBox10.Text = "bwl_adc"
-        Me.CheckBox10.UseVisualStyleBackColor = True
+        Me.asBwlAdc.AutoSize = True
+        Me.asBwlAdc.Location = New System.Drawing.Point(10, 111)
+        Me.asBwlAdc.Name = "asBwlAdc"
+        Me.asBwlAdc.Size = New System.Drawing.Size(66, 17)
+        Me.asBwlAdc.TabIndex = 5
+        Me.asBwlAdc.Text = "bwl_adc"
+        Me.asBwlAdc.UseVisualStyleBackColor = True
         '
-        'CheckBox11
+        'asBwlSimplSerial
         '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(10, 88)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(95, 17)
-        Me.CheckBox11.TabIndex = 4
-        Me.CheckBox11.Text = "bwl_simplserial"
-        Me.CheckBox11.UseVisualStyleBackColor = True
+        Me.asBwlSimplSerial.AutoSize = True
+        Me.asBwlSimplSerial.Location = New System.Drawing.Point(10, 88)
+        Me.asBwlSimplSerial.Name = "asBwlSimplSerial"
+        Me.asBwlSimplSerial.Size = New System.Drawing.Size(95, 17)
+        Me.asBwlSimplSerial.TabIndex = 4
+        Me.asBwlSimplSerial.Text = "bwl_simplserial"
+        Me.asBwlSimplSerial.UseVisualStyleBackColor = True
         '
-        'CheckBox12
+        'asBwlUart
         '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(10, 65)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(66, 17)
-        Me.CheckBox12.TabIndex = 3
-        Me.CheckBox12.Text = "bwl_uart"
-        Me.CheckBox12.UseVisualStyleBackColor = True
+        Me.asBwlUart.AutoSize = True
+        Me.asBwlUart.Checked = True
+        Me.asBwlUart.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.asBwlUart.Location = New System.Drawing.Point(10, 65)
+        Me.asBwlUart.Name = "asBwlUart"
+        Me.asBwlUart.Size = New System.Drawing.Size(66, 17)
+        Me.asBwlUart.TabIndex = 3
+        Me.asBwlUart.Text = "bwl_uart"
+        Me.asBwlUart.UseVisualStyleBackColor = True
         '
-        'CheckBox13
+        'asBwlTools
         '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(10, 42)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(70, 17)
-        Me.CheckBox13.TabIndex = 2
-        Me.CheckBox13.Text = "bwl_tools"
-        Me.CheckBox13.UseVisualStyleBackColor = True
+        Me.asBwlTools.AutoSize = True
+        Me.asBwlTools.Checked = True
+        Me.asBwlTools.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.asBwlTools.Location = New System.Drawing.Point(10, 42)
+        Me.asBwlTools.Name = "asBwlTools"
+        Me.asBwlTools.Size = New System.Drawing.Size(70, 17)
+        Me.asBwlTools.TabIndex = 2
+        Me.asBwlTools.Text = "bwl_tools"
+        Me.asBwlTools.UseVisualStyleBackColor = True
         '
-        'CheckBox14
+        'asBwlStrings
         '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(10, 19)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(78, 17)
-        Me.CheckBox14.TabIndex = 0
-        Me.CheckBox14.Text = "bwl_strings"
-        Me.CheckBox14.UseVisualStyleBackColor = True
+        Me.asBwlStrings.AutoSize = True
+        Me.asBwlStrings.Checked = True
+        Me.asBwlStrings.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.asBwlStrings.Location = New System.Drawing.Point(10, 19)
+        Me.asBwlStrings.Name = "asBwlStrings"
+        Me.asBwlStrings.Size = New System.Drawing.Size(78, 17)
+        Me.asBwlStrings.TabIndex = 0
+        Me.asBwlStrings.Text = "bwl_strings"
+        Me.asBwlStrings.UseVisualStyleBackColor = True
         '
         'asProjectC
         '
@@ -652,14 +658,14 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents vsBwlFramework As CheckBox
     Friend WithEvents gbAS As GroupBox
     Friend WithEvents GroupBox9 As GroupBox
-    Friend WithEvents CheckBox15 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox11 As CheckBox
-    Friend WithEvents CheckBox12 As CheckBox
-    Friend WithEvents CheckBox13 As CheckBox
-    Friend WithEvents CheckBox14 As CheckBox
+    Friend WithEvents asBwlIr As CheckBox
+    Friend WithEvents asBwlSpi As CheckBox
+    Friend WithEvents asBwlI2c As CheckBox
+    Friend WithEvents asBwlAdc As CheckBox
+    Friend WithEvents asBwlSimplSerial As CheckBox
+    Friend WithEvents asBwlUart As CheckBox
+    Friend WithEvents asBwlTools As CheckBox
+    Friend WithEvents asBwlStrings As CheckBox
     Friend WithEvents asProjectC As RadioButton
     Friend WithEvents asNone As RadioButton
     Friend WithEvents bGenerate As Button

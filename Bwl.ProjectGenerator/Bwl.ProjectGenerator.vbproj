@@ -51,6 +51,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>refs\Bwl.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="Bwl.GitTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>refs\Bwl.GitTools.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -70,13 +74,14 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Git\GitRepositoryStatus.vb" />
-    <Compile Include="Git\GitTool.vb" />
-    <Compile Include="IOTools.vb" />
-    <Compile Include="ProjectGeneratorForm.vb">
+    <Compile Include="src\AtmelStudio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProjectGeneratorForm.Designer.vb">
+    <Compile Include="src\IOTools.vb" />
+    <Compile Include="src\ProjectGeneratorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ProjectGeneratorForm.Designer.vb">
       <DependentUpon>ProjectGeneratorForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +101,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="templates\.gitignore">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="templates\atmel\Atmel7AvrTemplateC.atsln">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="templates\atmel\Atmel7AvrTemplateC\Atmel7AvrTemplateC.cproj">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="templates\LICENSE-APACHE">
@@ -137,6 +148,9 @@
     <None Include="templates\vs-vb\AutoUiApp.vb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="src\VisualStudio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="templates\vs-vb\VsGeneratorTemplateGui\App.Designer.vb">
       <DependentUpon>App.vb</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -151,6 +165,21 @@
     <None Include="templates\vs-vb\VsGeneratorTemplateTest.sln">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="refs\Bwl.GitTools.dll" />
+    <Content Include="refs\Bwl.GitTools.pdb" />
+    <Content Include="refs\Bwl.GitTools.xml" />
+    <Content Include="templates\atmel\Atmel7AvrTemplateC\Atmel7AvrTemplateC.componentinfo.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\atmel\Atmel7AvrTemplateC\board\board.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\atmel\Atmel7AvrTemplateC\board\board.h">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="templates\atmel\Atmel7AvrTemplateC\main.c">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="templates\vs-vb\VsGeneratorTemplateGui\My Project\Application.Designer.vb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -186,7 +215,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProjectGeneratorForm.resx">
+    <EmbeddedResource Include="src\ProjectGeneratorForm.resx">
       <DependentUpon>ProjectGeneratorForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="templates\vs-vb\VsGeneratorTemplateGui\App.resx">
@@ -257,7 +286,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="templates\atmel\Atmel7AvrTemplateC\libs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
