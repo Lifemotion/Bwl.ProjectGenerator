@@ -145,7 +145,6 @@ Partial Class ProjectGeneratorForm
         Me.basicProjectPath.Name = "basicProjectPath"
         Me.basicProjectPath.Size = New System.Drawing.Size(830, 20)
         Me.basicProjectPath.TabIndex = 4
-        Me.basicProjectPath.Text = "C:\Users\heart\Desktop\test"
         '
         'Label2
         '
@@ -179,7 +178,6 @@ Partial Class ProjectGeneratorForm
         Me.basicProjectName.Name = "basicProjectName"
         Me.basicProjectName.Size = New System.Drawing.Size(215, 20)
         Me.basicProjectName.TabIndex = 0
-        Me.basicProjectName.Text = "Bwl.ImgTest"
         '
         'gbVS
         '

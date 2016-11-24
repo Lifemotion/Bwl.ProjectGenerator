@@ -5,13 +5,17 @@ Public Class ProjectGeneratorForm
     Inherits FormAppBase
 
     Private Sub bGenerate_Click(sender As Object, e As EventArgs) Handles bGenerate.Click
-        If IO.Directory.Exists(basicProjectPath.Text) Then
-            MsgBox("Directory already exists!")
-            Return
+        If basicProjectName.Text > "" Then
+            If IO.Directory.Exists(basicProjectPath.Text) Then
+                MsgBox("Directory already exists!")
+                Return
+            End If
+            If vsNone.Checked = False Then GenerateVsVbStudioSolution() : CopyTools()
+            If asNone.Checked = False Then GenerateAtmelStudioSolution() : CopyTools()
+            Shell("explorer """ + basicProjectPath.Text + """", AppWinStyle.NormalFocus)
+        Else
+            MsgBox("Project Name cannot be empty!")
         End If
-        If vsNone.Checked = False Then GenerateVsVbStudioSolution() : CopyTools()
-        If asNone.Checked = False Then GenerateAtmelStudioSolution() : CopyTools()
-        Shell("explorer """ + basicProjectPath.Text + """", AppWinStyle.NormalFocus)
     End Sub
 
     Sub CopyTools()
