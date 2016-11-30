@@ -21,10 +21,16 @@ Partial Class ProjectGeneratorForm
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProjectGeneratorForm))
         Me.gbLicense = New System.Windows.Forms.GroupBox()
         Me.licenseApache = New System.Windows.Forms.RadioButton()
         Me.licenseNone = New System.Windows.Forms.RadioButton()
         Me.gbBasic = New System.Windows.Forms.GroupBox()
+        Me.basicAddToExisting = New System.Windows.Forms.RadioButton()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.basicPath = New System.Windows.Forms.TextBox()
+        Me.basicCreateNewWithFolder = New System.Windows.Forms.RadioButton()
+        Me.basicCreateNew = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.basicProjectPath = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -67,6 +73,11 @@ Partial Class ProjectGeneratorForm
         Me.asNone = New System.Windows.Forms.RadioButton()
         Me.bGenerate = New System.Windows.Forms.Button()
         Me.bUpdateRepos = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.miscGitInit = New System.Windows.Forms.CheckBox()
+        Me.miscReadme = New System.Windows.Forms.CheckBox()
+        Me.miscGitIgnore = New System.Windows.Forms.CheckBox()
+        Me.miscVsTools = New System.Windows.Forms.CheckBox()
         Me.gbLicense.SuspendLayout()
         Me.gbBasic.SuspendLayout()
         Me.gbVS.SuspendLayout()
@@ -75,18 +86,19 @@ Partial Class ProjectGeneratorForm
         Me.GroupBox4.SuspendLayout()
         Me.gbAS.SuspendLayout()
         Me.GroupBox9.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'logWriter
         '
-        Me.logWriter.Location = New System.Drawing.Point(2, 475)
-        Me.logWriter.Size = New System.Drawing.Size(1036, 201)
+        Me.logWriter.Location = New System.Drawing.Point(2, 497)
+        Me.logWriter.Size = New System.Drawing.Size(1036, 209)
         '
         'gbLicense
         '
         Me.gbLicense.Controls.Add(Me.licenseApache)
         Me.gbLicense.Controls.Add(Me.licenseNone)
-        Me.gbLicense.Location = New System.Drawing.Point(812, 108)
+        Me.gbLicense.Location = New System.Drawing.Point(812, 292)
         Me.gbLicense.Name = "gbLicense"
         Me.gbLicense.Size = New System.Drawing.Size(215, 66)
         Me.gbLicense.TabIndex = 2
@@ -117,6 +129,11 @@ Partial Class ProjectGeneratorForm
         '
         'gbBasic
         '
+        Me.gbBasic.Controls.Add(Me.basicAddToExisting)
+        Me.gbBasic.Controls.Add(Me.Label4)
+        Me.gbBasic.Controls.Add(Me.basicPath)
+        Me.gbBasic.Controls.Add(Me.basicCreateNewWithFolder)
+        Me.gbBasic.Controls.Add(Me.basicCreateNew)
         Me.gbBasic.Controls.Add(Me.Label3)
         Me.gbBasic.Controls.Add(Me.basicProjectPath)
         Me.gbBasic.Controls.Add(Me.Label2)
@@ -125,31 +142,80 @@ Partial Class ProjectGeneratorForm
         Me.gbBasic.Controls.Add(Me.basicProjectName)
         Me.gbBasic.Location = New System.Drawing.Point(12, 27)
         Me.gbBasic.Name = "gbBasic"
-        Me.gbBasic.Size = New System.Drawing.Size(933, 75)
+        Me.gbBasic.Size = New System.Drawing.Size(1015, 129)
         Me.gbBasic.TabIndex = 3
         Me.gbBasic.TabStop = False
         Me.gbBasic.Text = "Basic"
         '
+        'basicAddToExisting
+        '
+        Me.basicAddToExisting.AutoSize = True
+        Me.basicAddToExisting.Location = New System.Drawing.Point(358, 45)
+        Me.basicAddToExisting.Name = "basicAddToExisting"
+        Me.basicAddToExisting.Size = New System.Drawing.Size(151, 17)
+        Me.basicAddToExisting.TabIndex = 11
+        Me.basicAddToExisting.Text = "Add projects to existing set"
+        Me.basicAddToExisting.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(11, 71)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Base Path"
+        '
+        'basicPath
+        '
+        Me.basicPath.Location = New System.Drawing.Point(94, 68)
+        Me.basicPath.Name = "basicPath"
+        Me.basicPath.Size = New System.Drawing.Size(915, 20)
+        Me.basicPath.TabIndex = 9
+        '
+        'basicCreateNewWithFolder
+        '
+        Me.basicCreateNewWithFolder.AutoSize = True
+        Me.basicCreateNewWithFolder.Checked = True
+        Me.basicCreateNewWithFolder.Location = New System.Drawing.Point(155, 45)
+        Me.basicCreateNewWithFolder.Name = "basicCreateNewWithFolder"
+        Me.basicCreateNewWithFolder.Size = New System.Drawing.Size(197, 17)
+        Me.basicCreateNewWithFolder.TabIndex = 8
+        Me.basicCreateNewWithFolder.TabStop = True
+        Me.basicCreateNewWithFolder.Text = "Create Full Solutions Set (with folder)"
+        Me.basicCreateNewWithFolder.UseVisualStyleBackColor = True
+        '
+        'basicCreateNew
+        '
+        Me.basicCreateNew.AutoSize = True
+        Me.basicCreateNew.Location = New System.Drawing.Point(9, 45)
+        Me.basicCreateNew.Name = "basicCreateNew"
+        Me.basicCreateNew.Size = New System.Drawing.Size(140, 17)
+        Me.basicCreateNew.TabIndex = 7
+        Me.basicCreateNew.Text = "Create Full Solutions Set"
+        Me.basicCreateNew.UseVisualStyleBackColor = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 49)
+        Me.Label3.Location = New System.Drawing.Point(11, 101)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 13)
+        Me.Label3.Size = New System.Drawing.Size(70, 13)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Project Path"
+        Me.Label3.Text = "Projects Path"
         '
         'basicProjectPath
         '
-        Me.basicProjectPath.Location = New System.Drawing.Point(94, 46)
+        Me.basicProjectPath.Enabled = False
+        Me.basicProjectPath.Location = New System.Drawing.Point(94, 98)
         Me.basicProjectPath.Name = "basicProjectPath"
-        Me.basicProjectPath.Size = New System.Drawing.Size(830, 20)
+        Me.basicProjectPath.Size = New System.Drawing.Size(915, 20)
         Me.basicProjectPath.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(315, 22)
+        Me.Label2.Location = New System.Drawing.Point(510, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(74, 13)
         Me.Label2.TabIndex = 3
@@ -157,11 +223,10 @@ Partial Class ProjectGeneratorForm
         '
         'basicProjectAuthor
         '
-        Me.basicProjectAuthor.Location = New System.Drawing.Point(403, 19)
+        Me.basicProjectAuthor.Location = New System.Drawing.Point(598, 19)
         Me.basicProjectAuthor.Name = "basicProjectAuthor"
         Me.basicProjectAuthor.Size = New System.Drawing.Size(215, 20)
         Me.basicProjectAuthor.TabIndex = 2
-        Me.basicProjectAuthor.Text = "Cat Max"
         '
         'Label1
         '
@@ -176,7 +241,7 @@ Partial Class ProjectGeneratorForm
         '
         Me.basicProjectName.Location = New System.Drawing.Point(94, 19)
         Me.basicProjectName.Name = "basicProjectName"
-        Me.basicProjectName.Size = New System.Drawing.Size(215, 20)
+        Me.basicProjectName.Size = New System.Drawing.Size(410, 20)
         Me.basicProjectName.TabIndex = 0
         '
         'gbVS
@@ -190,9 +255,9 @@ Partial Class ProjectGeneratorForm
         Me.gbVS.Controls.Add(Me.vsConsole)
         Me.gbVS.Controls.Add(Me.vsGui)
         Me.gbVS.Controls.Add(Me.vsNone)
-        Me.gbVS.Location = New System.Drawing.Point(12, 108)
+        Me.gbVS.Location = New System.Drawing.Point(11, 165)
         Me.gbVS.Name = "gbVS"
-        Me.gbVS.Size = New System.Drawing.Size(425, 364)
+        Me.gbVS.Size = New System.Drawing.Size(425, 323)
         Me.gbVS.TabIndex = 4
         Me.gbVS.TabStop = False
         Me.gbVS.Text = "Visual Studio Projects"
@@ -431,9 +496,9 @@ Partial Class ProjectGeneratorForm
         Me.gbAS.Controls.Add(Me.GroupBox9)
         Me.gbAS.Controls.Add(Me.asProjectC)
         Me.gbAS.Controls.Add(Me.asNone)
-        Me.gbAS.Location = New System.Drawing.Point(448, 108)
+        Me.gbAS.Location = New System.Drawing.Point(447, 165)
         Me.gbAS.Name = "gbAS"
-        Me.gbAS.Size = New System.Drawing.Size(216, 364)
+        Me.gbAS.Size = New System.Drawing.Size(216, 323)
         Me.gbAS.TabIndex = 5
         Me.gbAS.TabStop = False
         Me.gbAS.Text = "Atmel Studio Project"
@@ -566,42 +631,108 @@ Partial Class ProjectGeneratorForm
         '
         'bGenerate
         '
-        Me.bGenerate.Location = New System.Drawing.Point(953, 33)
+        Me.bGenerate.Location = New System.Drawing.Point(952, 426)
         Me.bGenerate.Name = "bGenerate"
-        Me.bGenerate.Size = New System.Drawing.Size(75, 69)
+        Me.bGenerate.Size = New System.Drawing.Size(75, 62)
         Me.bGenerate.TabIndex = 6
         Me.bGenerate.Text = "Generate"
         Me.bGenerate.UseVisualStyleBackColor = True
         '
         'bUpdateRepos
         '
-        Me.bUpdateRepos.Location = New System.Drawing.Point(953, 403)
+        Me.bUpdateRepos.Location = New System.Drawing.Point(871, 427)
         Me.bUpdateRepos.Name = "bUpdateRepos"
-        Me.bUpdateRepos.Size = New System.Drawing.Size(75, 69)
+        Me.bUpdateRepos.Size = New System.Drawing.Size(75, 62)
         Me.bUpdateRepos.TabIndex = 7
         Me.bUpdateRepos.Text = "Update Repositories"
         Me.bUpdateRepos.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.miscGitInit)
+        Me.GroupBox1.Controls.Add(Me.miscReadme)
+        Me.GroupBox1.Controls.Add(Me.miscGitIgnore)
+        Me.GroupBox1.Controls.Add(Me.miscVsTools)
+        Me.GroupBox1.Location = New System.Drawing.Point(812, 165)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(215, 121)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Misc"
+        '
+        'miscGitInit
+        '
+        Me.miscGitInit.AutoSize = True
+        Me.miscGitInit.Checked = True
+        Me.miscGitInit.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.miscGitInit.Location = New System.Drawing.Point(6, 89)
+        Me.miscGitInit.Name = "miscGitInit"
+        Me.miscGitInit.Size = New System.Drawing.Size(107, 17)
+        Me.miscGitInit.TabIndex = 4
+        Me.miscGitInit.Text = "Init as Repository"
+        Me.miscGitInit.UseVisualStyleBackColor = True
+        '
+        'miscReadme
+        '
+        Me.miscReadme.AutoSize = True
+        Me.miscReadme.Checked = True
+        Me.miscReadme.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.miscReadme.Location = New System.Drawing.Point(6, 66)
+        Me.miscReadme.Name = "miscReadme"
+        Me.miscReadme.Size = New System.Drawing.Size(72, 17)
+        Me.miscReadme.TabIndex = 3
+        Me.miscReadme.Text = "README"
+        Me.miscReadme.UseVisualStyleBackColor = True
+        '
+        'miscGitIgnore
+        '
+        Me.miscGitIgnore.AutoSize = True
+        Me.miscGitIgnore.Checked = True
+        Me.miscGitIgnore.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.miscGitIgnore.Location = New System.Drawing.Point(6, 20)
+        Me.miscGitIgnore.Name = "miscGitIgnore"
+        Me.miscGitIgnore.Size = New System.Drawing.Size(69, 17)
+        Me.miscGitIgnore.TabIndex = 2
+        Me.miscGitIgnore.Text = ".gitignore"
+        Me.miscGitIgnore.UseVisualStyleBackColor = True
+        '
+        'miscVsTools
+        '
+        Me.miscVsTools.AutoSize = True
+        Me.miscVsTools.Checked = True
+        Me.miscVsTools.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.miscVsTools.Location = New System.Drawing.Point(6, 43)
+        Me.miscVsTools.Name = "miscVsTools"
+        Me.miscVsTools.Size = New System.Drawing.Size(62, 17)
+        Me.miscVsTools.TabIndex = 1
+        Me.miscVsTools.Text = "vs-tools"
+        Me.miscVsTools.UseVisualStyleBackColor = True
         '
         'ProjectGeneratorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1039, 677)
+        Me.ClientSize = New System.Drawing.Size(1039, 711)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.bUpdateRepos)
-        Me.Controls.Add(Me.bGenerate)
         Me.Controls.Add(Me.gbAS)
         Me.Controls.Add(Me.gbVS)
         Me.Controls.Add(Me.gbBasic)
         Me.Controls.Add(Me.gbLicense)
+        Me.Controls.Add(Me.bGenerate)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ProjectGeneratorForm"
         Me.Text = "Bwl Project Generator"
         Me.Controls.SetChildIndex(Me.logWriter, 0)
+        Me.Controls.SetChildIndex(Me.bGenerate, 0)
         Me.Controls.SetChildIndex(Me.gbLicense, 0)
         Me.Controls.SetChildIndex(Me.gbBasic, 0)
         Me.Controls.SetChildIndex(Me.gbVS, 0)
         Me.Controls.SetChildIndex(Me.gbAS, 0)
-        Me.Controls.SetChildIndex(Me.bGenerate, 0)
         Me.Controls.SetChildIndex(Me.bUpdateRepos, 0)
+        Me.Controls.SetChildIndex(Me.GroupBox1, 0)
         Me.gbLicense.ResumeLayout(False)
         Me.gbLicense.PerformLayout()
         Me.gbBasic.ResumeLayout(False)
@@ -618,6 +749,8 @@ Partial Class ProjectGeneratorForm
         Me.gbAS.PerformLayout()
         Me.GroupBox9.ResumeLayout(False)
         Me.GroupBox9.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -669,4 +802,14 @@ Partial Class ProjectGeneratorForm
     Friend WithEvents bGenerate As Button
     Friend WithEvents vsStandardForm As RadioButton
     Friend WithEvents bUpdateRepos As Button
+    Friend WithEvents basicAddToExisting As RadioButton
+    Friend WithEvents Label4 As Label
+    Friend WithEvents basicPath As TextBox
+    Friend WithEvents basicCreateNewWithFolder As RadioButton
+    Friend WithEvents basicCreateNew As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents miscReadme As CheckBox
+    Friend WithEvents miscGitIgnore As CheckBox
+    Friend WithEvents miscVsTools As CheckBox
+    Friend WithEvents miscGitInit As CheckBox
 End Class

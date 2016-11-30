@@ -60,7 +60,7 @@ Public Class IOTools
         Dim files As FileInfo() = dir.GetFiles()
         For Each file In files
             Dim temppath As String = Path.Combine(destDirName, file.Name)
-            file.CopyTo(temppath, False)
+            file.CopyTo(temppath, True)
         Next file
 
         ' If copying subdirectories, copy them and their contents to new location.

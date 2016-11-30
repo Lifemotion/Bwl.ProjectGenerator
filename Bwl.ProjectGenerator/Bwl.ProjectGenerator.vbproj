@@ -33,6 +33,7 @@
     <OutputPath>..\release\Bwl Project Generator\bin\</OutputPath>
     <DocumentationFile>Bwl.ProjectGenerator.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -45,6 +46,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bwl.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -159,6 +163,7 @@
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="icon.ico" />
     <Content Include="refs\Bwl.Framework.dll" />
     <Content Include="refs\Bwl.Framework.pdb" />
     <Content Include="refs\Bwl.Framework.xml" />
